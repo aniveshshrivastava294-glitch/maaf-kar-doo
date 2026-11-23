@@ -77,9 +77,15 @@ for (var i = 0; i < 16; i++) {
 }
 
 var io = new IntersectionObserver(function (es) {
-  es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("show"); io.unobserve(e.target); } });
-}, { threshold: 0.2 });
+  es.forEach(function (e) {
+    if (e.isIntersecting) {
+      e.target.classList.add("show");
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: "0px 0px -20px 0px" });
+
 document.querySelectorAll(".reveal").forEach(function (el, i) {
-  el.style.transitionDelay = (i % 3) * 0.15 + "s";
+  el.style.transitionDelay = (i % 2) * 0.1 + "s";
   io.observe(el);
 });

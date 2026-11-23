@@ -1,0 +1,2 @@
+Add your photos here (jpg/png), e.g. 1.jpg, 2.jpg.
+Then list them in script.js under "photos".
